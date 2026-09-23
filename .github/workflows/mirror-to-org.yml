@@ -1,0 +1,39 @@
+# Copies every change on main in daskals/binder-mk53-rs422-control to the
+# lab organisation's copy of the repository.
+#
+# Needs a repository secret ORG_MIRROR_DEPLOY_KEY: the private half of an SSH
+# key whose public half is a write-enabled deploy key on the organisation repo.
+# The push is not forced, so commits made directly in the organisation copy
+# make this job fail instead of being overwritten.
+
+name: Mirror to lab organisation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: mirror-to-org
+
+jobs:
+  mirror:
+    # the workflow file is copied to the organisation repo too; do nothing there
+    if: github.repository == 'daskals/binder-mk53-rs422-control'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push main and tags to the organisation repository
+        env:
+          DEPLOY_KEY: ${{ secrets.ORG_MIRROR_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/mirror_key
+          chmod 600 ~/.ssh/mirror_key
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/mirror_key -o IdentitiesOnly=yes"
+          TARGET=git@github.com:Microwave-Antenna-Engineering-Group-HWU/binder-mk53-rs422-control.git
+          git push "$TARGET" HEAD:refs/heads/main
+          git push "$TARGET" --tags

@@ -6,6 +6,8 @@ Python tools to read and set the temperature of a BINDER MK 53 (E2.1) climate ch
 
 Tested on an MK 53 E2 (article 9120-0006, MB1 controller, built 2014) in the Heriot-Watt University lab, September 2026.
 
+The main repository is [daskals/binder-mk53-rs422-control](https://github.com/daskals/binder-mk53-rs422-control). A copy in the [Microwave Antenna Engineering Group](https://github.com/Microwave-Antenna-Engineering-Group-HWU/binder-mk53-rs422-control) organisation is updated automatically on every push to `main`, so please open issues and pull requests on the main repository.
+
 ## What you need
 
 | Part | Notes |
