@@ -127,4 +127,8 @@ The full account of how the connection was worked out, with sources, is in [docs
 
 Modbus framing follows the SiLab Bonn [basil](https://github.com/SiLab-Bonn/basil) Binder MK53 driver and [ecree-solarflare/ovenctl](https://github.com/ecree-solarflare/ovenctl). Register addresses and serial settings are confirmed against BINDER's own documents, supplied by BINDER Service.
 
+## Licence
+
+The code and documentation are released under the [MIT Licence](LICENSE). The Heriot-Watt University logo in `code/assets/` belongs to Heriot-Watt University and is not covered by the MIT Licence.
+
 BINDER and MK 53 are trademarks of BINDER GmbH. This project is not affiliated with or endorsed by BINDER.
