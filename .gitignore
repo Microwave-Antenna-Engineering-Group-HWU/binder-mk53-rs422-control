@@ -1,0 +1,39 @@
+# ---- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# ---- Claude Code (local assistant notes and settings) ---------------------
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+# ---- Third-party documents --------------------------------------------------
+# BINDER manuals, specifications and the factory wiring diagram are copyright
+# BINDER GmbH (the wiring diagram forbids reproduction). They are kept locally
+# only; datasheets/README.md lists them and where to get them.
+datasheets/*.pdf
+
+# ---- Full-size photo originals (web-sized copies in images/ are tracked) ----
+images/originals/
+
+# ---- Editors and operating systems -----------------------------------------
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- Dropbox ---------------------------------------------------------------
+.dropbox
+.dropbox.attr
+*(Conflicted copy*)*

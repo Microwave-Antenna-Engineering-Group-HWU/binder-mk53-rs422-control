@@ -1,0 +1,16 @@
+# Runtime packages for the MK 53 driver (serial RS-422 link only)
+
+# VISA layer used by mk53_driver.py
+pyvisa>=1.13.0
+
+# Pure-Python VISA backend; opens ASRL (COM port) resources
+pyvisa-py>=0.7.2
+
+# Serial port access, needed by pyvisa-py for ASRL resources
+pyserial>=3.5
+
+# Only for the logo in chamber_gui.py; the window works without it
+pillow>=10.0
+
+# USB-TMC packages (pyusb, libusb-package) are not needed here.
+# Add them only if a USB instrument is used with pyvisa-py later.

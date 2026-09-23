@@ -1,0 +1,8 @@
+# Extra packages for testing and building the PDF report
+-r requirements.txt
+
+# Test runner (the tests also run with plain unittest)
+pytest>=7.4.0
+
+# Builds MK53_CONNECTION_REPORT.pdf from the Markdown file
+reportlab>=4.0
